@@ -1,0 +1,19 @@
+{
+  "name": "Mercenary",
+  "version": "0.0.0",
+  "authors": [
+    "dera-"
+  ],
+  "description": "オンライン戦略シミュレーション",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "enchant.js-builds": "~0.8.2"
+  }
+}
