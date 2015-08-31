@@ -14,6 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "enchant.js-builds": "~0.8.2"
+    "enchant.js-builds": "~0.8.2",
+    "jquery": "jQuery#~2.1.4"
   }
 }

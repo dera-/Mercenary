@@ -14,7 +14,8 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),  // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
-    new webpack.optimize.AggressiveMergingPlugin() //ファイルを細かく分析し、まとめられるところはできるだけまとめてコードを圧縮する
+    new webpack.optimize.AggressiveMergingPlugin(), //ファイルを細かく分析し、まとめられるところはできるだけまとめてコードを圧縮する
+    new webpack.optimize.UglifyJsPlugin() //jsファイルのminify
   ],
   module: {
     loaders: [
