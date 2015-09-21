@@ -1,4 +1,4 @@
-import MapChipEntityRepository from '../../repository/MapChipEntityRepository';
+import MapChipModelRepository from '../../repository/MapChipModelRepository';
 
 export default class MapModel {
   constructor(mapChips, obstacles) {
@@ -9,17 +9,15 @@ export default class MapModel {
   }
 
   isMovable(place) {
-    if (place.x < 0 || width <= place.x || place.y < 0 || height <= place.y) {
+    if (0 > place.x || place.x >= this.width || 0 > place.y || place.y >= this.height) {
       return false
     }
-    let mapChipId = this.mapChips[place.y][place.x],
-      isExistObstacle = this.obstacles.some(obstacle => obstacle.x <= place.x && place.x < obstacle.x + obstacle.width && obstacle.y <= place.y && place.y < obstacle.y + obstacle.height),
-      isMovableMapChip = MapChipEntityRepository.get(mapChipId).isMovable;
-    return !isExistObstacle && isMovableMapChip;
+    return !this.obstacles.some(obstacle => obstacle.point.x <= place.x && place.x < obstacle.point.x + obstacle.width && obstacle.point.y <= place.y && place.y < obstacle.point.y + obstacle.height);
   }
 
   getCost(place) {
     let mapChipId = this.mapChips[place.y][place.x];
-    return MapChipEntityRepository.get(mapChipId).cost;
+    return MapChipModelRepository.get(mapChipId).cost;
   }
+
 }

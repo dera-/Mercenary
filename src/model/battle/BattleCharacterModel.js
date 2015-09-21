@@ -2,25 +2,25 @@ import MovingCharacterModel from 'MovingCharacterModel';
 import CharacterMovingService from '../../service/CharacterMovingService';
 
 export default class BattleCharacterModel {
-  constructor(entity, jobs, brain, charaType, place) {
-    this.id = entity.id;
-    this.lv = entity.lv;
-    this.exp = entity.exp;
-    this.maxHp = entity.hp;
-    this.currentHp = entity.hp;
-    this.attack = entity.attack;
-    this.defense = entity.defense;
-    this.hit = entity.hit;
-    this.avoid = entity.avoid;
-    this.intelligence = entity.intelligence;
-    this.luck = entity.luck;
-    this.magicAttack = entity.magicAttack;
-    this.magicDefense = entity.magicDefense;
-    this.move = move;
+  constructor(charaData) {
+    this.id = parseInt(charaData.id, 10);
+    this.lv = parseInt(charaData.lv, 10);
+    this.exp = parseInt(charaData.exp, 10);
+    this.maxHp = parseInt(charaData.hp, 10);
+    this.currentHp = parseInt(charaData.hp, 10);
+    this.attack = parseInt(charaData.attack, 10);
+    this.defense = parseInt(charaData.defense, 10);
+    this.hit = parseInt(charaData.hit, 10);
+    this.avoid = parseInt(charaData.avoid, 10);
+    this.intelligence = parseInt(charaData.intelligence, 10);
+    this.luck = parseInt(charaData.luck, 10);
+    this.magicAttack = parseInt(charaData.magicAttack, 10);
+    this.magicDefense = parseInt(charaData.magicDefense, 10);
+    this.move = parseInt(charaData.move, 10);
     this.jobs = jobs;
     this.brain = brain;
-    this.charaType = charaType;
-    this.place = place;
+    this.charaType = parseInt(charaData.charaType);
+    this.place = new Point(charaData.place_x, charaData.place_y);
 
     this.activeStatus = true;
   }

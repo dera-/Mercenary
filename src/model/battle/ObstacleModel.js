@@ -1,13 +1,18 @@
+import Point from '../util/Point';
+
 export default class ObstacleModel {
-  constructor(entity) {
-    this.id = entity.id;
-    this.fileNamePrefix = entity.file_name_prefix;
-    this.name = entity.name;   
-    this.hp = entity.hp;
-    this.x = entity.x;
-    this.y = entity.y;
-    this.width = entity.width;
-    this.height = entity.height;
-    this.type = entity.type;
+  constructor(data) {
+    this.id = data['id'];
+    this.fileNamePrefix = data['file_name_prefix'];
+    this.name = data['name'];
+    this.width = data['width'];
+    this.height = data['height'];
+    this.maxHp = data['hp'];
+    this.currentHp = data['hp'];
+    this.point = new Point(data['x'], data['y']);
+  }
+
+  getId() {
+    return this.id;
   }
 }
