@@ -1,4 +1,4 @@
-import MapCharacterModel from 'MapCharacterModel';
+import MapCharacterModel from './MapCharacterModel';
 
 export default class MovingCharacterModel extends MapCharacterModel {
   constructor(id, charaType, place, move) {

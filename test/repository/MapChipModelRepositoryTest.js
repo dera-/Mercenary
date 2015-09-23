@@ -10,6 +10,10 @@ describe('MapChipModelRepositoryクラス', () => {
     MapChipModelRepository.set(targetId, targetValue);
     done();
   });
+  after(done => {
+    MapChipModelRepository.clear();
+    done();
+  });
   describe('getメソッド', () => {
     it('setした値をgetで取り出せる', () => {
       assert(MapChipModelRepository.get(targetId) === targetValue);

@@ -3,7 +3,7 @@ import Point from '../../../src/model/util/Point';
 import MovingRoute from '../../../src/model/battle/MovingRoute';
 
 describe( 'MovingRouteクラス', () => {
-  var movingRoute = new MovingRoute([new Point(2,1), new Point(3,1), new Point(3,2)], 3);
+  let movingRoute = new MovingRoute([new Point(2,1), new Point(3,1), new Point(3,2)], 3);
   describe('isSameRouteメソッド', () => {
     it('全く同じ場合', () => {
       let target = new MovingRoute([new Point(2,1), new Point(3,1), new Point(3,2)], 10);
@@ -18,6 +18,21 @@ describe( 'MovingRouteクラス', () => {
       assert(movingRoute.isSameRoute(target) === false);
     });
   });
+
+  describe('getReachPlaceメソッド', () => {
+    it('要素数が１以上の時はPoint配列の一番後ろの要素を返す', () => {
+      let route = new MovingRoute([new Point(2,1), new Point(3,1), new Point(3,2)], 10),
+        reachPlace = route.getReachPlace();
+      assert(reachPlace.x === 3);
+      assert(reachPlace.y === 2);
+    });
+    it('要素数が0の時はnullを返す', () => {
+      let route = new MovingRoute([], 10),
+        reachPlace = route.getReachPlace();
+      assert(reachPlace === null);
+    });
+  });
+
   describe('createFromRouteメソッド(クラスメソッド)', () => {
     it('MovingRouteオブジェクトが生成できる', ()=>{
       let newMovingRoute = MovingRoute.createFromRoute(movingRoute, new Point(4,2), 1.2),

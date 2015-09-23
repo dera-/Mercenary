@@ -1,5 +1,7 @@
 import MapChipModelRepository from '../../repository/MapChipModelRepository';
 
+const MAXIMUM_COST = Number.MAX_VALUE;
+
 export default class MapModel {
   constructor(mapChips, obstacles) {
     this.mapChips = mapChips;
@@ -16,8 +18,10 @@ export default class MapModel {
   }
 
   getCost(place) {
-    let mapChipId = this.mapChips[place.y][place.x];
-    return MapChipModelRepository.get(mapChipId).cost;
+    if (!this.isMovable(place)) {
+      return MAXIMUM_COST;
+    }
+    return MapChipModelRepository.get(this.mapChips[place.y][place.x]).cost;
   }
 
 }

@@ -7,4 +7,7 @@ export default class Point {
     this.x += dx;
     this.y += dy;
   }
+  isSamePoint(other) {
+    return this.x === other.x && this.y === other.y;
+  }
 }

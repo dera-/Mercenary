@@ -15,4 +15,14 @@ describe('Pointクラス', () => {
       assert(point.y === expected.y);
     });
   });
+  describe('isSamePointメソッド', () => {
+    it('同じ座標の場合trueを返す', () => {
+      let samePoint = new Point(3, 5);
+      assert(point.isSamePoint(samePoint) === true);
+    });
+    it('同じ座標でない場合falseを返す', () => {
+      let anotherPoint = new Point(5, 4);
+      assert(point.isSamePoint(anotherPoint) === false);
+    });
+  });
 });

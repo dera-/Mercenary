@@ -7,7 +7,8 @@ import Point from '../../../src/model/util/Point';
 import MapChipModelRepository from '../../../src/repository/MapChipModelRepository';
 import MapModel from '../../../src/model/battle/MapModel';
 
-  var road = new MapChipModel(MapChipMock.road),
+describe('MapModelクラス', () => {
+  let road = new MapChipModel(MapChipMock.road),
     forest = new MapChipModel(MapChipMock.forest),
     mapEntities = [
       [1,2,2,1],
@@ -20,9 +21,8 @@ import MapModel from '../../../src/model/battle/MapModel';
       new ObstacleModel(ObstacleMock.oblongWall)
     ],
     mapModel = new MapModel(mapEntities, obstacleModels);
-
-describe('MapModelクラス', () => {
   before(done => {
+    MapChipModelRepository.clear();
     MapChipModelRepository.set(road.id, road);
     MapChipModelRepository.set(forest.id, forest);
     done();
