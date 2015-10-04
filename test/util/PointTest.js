@@ -1,5 +1,5 @@
 import assert from 'power-assert';
-import Point from '../../../src/model/util/Point.js';
+import Point from '../../src/util/Point.js';
 
 describe('Pointクラス', () => {
   var point = null;

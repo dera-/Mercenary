@@ -1,4 +1,4 @@
-import MapChipModelRepository from '../../repository/MapChipModelRepository';
+import MapChipModelRepository from '../../repository/model/battle/MapChipModelRepository';
 
 const MAXIMUM_COST = Number.MAX_VALUE;
 

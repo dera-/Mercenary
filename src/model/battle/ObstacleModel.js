@@ -10,9 +10,11 @@ export default class ObstacleModel {
     this.maxHp = data['hp'];
     this.currentHp = data['hp'];
     this.point = new Point(data['x'], data['y']);
+
+    this.modelId = this.point.x + 1000 * this.point.y; //MAPにおける一意な数値を生成
   }
 
-  getId() {
-    return this.id;
+  getModelId() {
+    return this.modelId;
   }
 }

@@ -3,8 +3,8 @@ import * as MapChipMock from '../../mockdata/MapChip';
 import * as ObstacleMock from '../../mockdata/Obstacle';
 import MapChipModel from '../../../src/model/battle/MapChipModel.js';
 import ObstacleModel from '../../../src/model/battle/ObstacleModel';
-import Point from '../../../src/model/util/Point';
-import MapChipModelRepository from '../../../src/repository/MapChipModelRepository';
+import Point from '../../../src/util/Point';
+import MapChipModelRepository from '../../../src/repository/model/battle/MapChipModelRepository';
 import MapModel from '../../../src/model/battle/MapModel';
 
 describe('MapModelクラス', () => {

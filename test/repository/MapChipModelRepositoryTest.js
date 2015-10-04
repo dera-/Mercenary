@@ -1,5 +1,5 @@
 import assert from 'power-assert';
-import MapChipModelRepository from '../../src/repository/MapChipModelRepository';
+import MapChipModelRepository from '../../src/repository/model/battle/MapChipModelRepository';
 
 describe('MapChipModelRepositoryクラス', () => {
   var targetId = 1,

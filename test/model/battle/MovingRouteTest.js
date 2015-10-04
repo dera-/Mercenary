@@ -1,5 +1,5 @@
 import assert from 'power-assert';
-import Point from '../../../src/model/util/Point';
+import Point from '../../../src/util/Point';
 import MovingRoute from '../../../src/model/battle/MovingRoute';
 
 describe( 'MovingRouteクラス', () => {

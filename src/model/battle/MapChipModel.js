@@ -13,6 +13,6 @@ export default class MapChipModel {
     this.magicDefense = data['magic_defense'];
   }
   getId () {
-    return data['id'];
+    return this.id;
   }
 }
